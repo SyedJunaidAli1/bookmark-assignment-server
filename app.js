@@ -1,10 +1,16 @@
 import express from "express";
 import cors from "cors";
 import bookmarks from "./bookmarks.js";
+import "dotenv/config";
 
 const app = express();
+const Frontend = process.env.NEXT_PUBLIC_URL;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: Frontend,
+  }),
+);
 app.use(express.json());
 
 /**
