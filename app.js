@@ -38,6 +38,15 @@ app.post("/bookmarks", (req, res) => {
     });
   }
 
+  // ✅ URL VALIDATION 
+  try {
+    new URL(url);
+  } catch {
+    return res.status(400).json({
+      error: "Invalid URL",
+    });
+  }
+
   if (title.length > 200) {
     return res.status(400).json({
       error: "title too long",
