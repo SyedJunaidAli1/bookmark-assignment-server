@@ -8,7 +8,7 @@ const Frontend = process.env.NEXT_PUBLIC_URL;
 
 app.use(
   cors({
-    origin: Frontend,
+    origin: "https://bookmark-assignment-client.vercel.app",
   }),
 );
 app.use(express.json());
